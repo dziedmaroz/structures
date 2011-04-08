@@ -64,7 +64,7 @@ template<class T>
         T ArrayStack<T>::pop ()
 {
     if (isEmpty ()) throw (StructExceptions("Stack is empty!"));
-    return arr_[top_--];
+    return arr_[--top_];
 }
 
 template<class T>
