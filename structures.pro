@@ -17,8 +17,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     classes/ArrayStack.cpp \
-    classes/StructExceptions.cpp
+    classes/StructExceptions.cpp \
+    classes/List.cpp
 
 HEADERS += \
     classes/ArrayStack.h \
-    classes/StructExceptions.h
+    classes/StructExceptions.h \
+    classes/List.h
