@@ -1,19 +1,20 @@
-//#include "classes/ArrayStack.h"
-//#include "classes/ArrayStack.cpp"
-
-#include "classes/List.h"
-#include "classes/List.cpp"
+#include "ArrayStack.h"
+#include "ArrayStack.cpp"
+#include "List.h"
 
 #include <stdio.h>
 
 int main(int argc, char *argv[])
 {
-//    ArrayStack<int> stack (5);
-//    for (int i=0;i<5;i++)
-//        stack.push (i);
-//    stack.print ();
+    ArrayStack<int> stack (5);
+    for (int i=0;i<5;i++)
+        stack.push (i);
+    stack.print ();
 
-    List<int> lst ();
+    int* arr = new int [5];
+    for (int i=0;i<5;i++)
+        arr[i]=i;
+    List lst (arr,5);
     for (int i=0;i<10;i++)
         lst.insert (i);
 
