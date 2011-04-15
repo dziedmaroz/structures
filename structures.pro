@@ -15,17 +15,14 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp \
-    classes/StructExceptions.cpp \
-    classes/List.cpp \
+SOURCES += main.cpp \        
     List.cpp \
     ArrayStack.cpp \
-    StructExceptions.cpp
+    StructExceptions.cpp \
+    StudContainer.cpp
 
 HEADERS += \
-    classes/ArrayStack.h \
-    classes/StructExceptions.h \
-    classes/List.h \
     List.h \
     ArrayStack.h \
-    StructExceptions.h
+    StructExceptions.h \
+    StudContainer.h
