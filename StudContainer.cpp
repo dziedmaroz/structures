@@ -6,7 +6,7 @@ StudContainer::StudContainer (int n)
 {
 	size_=n;
 	studPointer_=new Student[size_];
-	int count_=0;
+	count_=0;
 }
 
 StudContainer::StudContainer(const StudContainer &orig)
@@ -28,9 +28,10 @@ StudContainer::~StudContainer ()
 
 bool StudContainer::insert (Student &item)
 {
-	if (count_!=size_)
+	if (count_<size_)
 	{
-		studPointer_[count_++]=item;
+		studPointer_[count_]=item;
+		count_++;
 		return true;
 	}
 	return false;
@@ -56,7 +57,7 @@ int StudContainer::getSize ()
 }
 int StudContainer::getCount ()
 {
-	return count_;
+	return count_+1;
 }
 
 Student* StudContainer::getStud (char* name)
@@ -90,20 +91,26 @@ int StudContainer::findByName (char* name)
     return -1;
 }
 
-
+int StudContainer::cmpNames (const void* x, const void* y)
+{
+    int i=0;
+    Student* a=(Student*)x;
+    Student* b=(Student*)y;
+    while (strlen(a->name)==strlen(b->name) && i<strlen(a->name) && a->name[i]==b->name[i++]);
+    return a->name[i]-b->name[i];
+};
 
 void StudContainer::sortByName ()
 {
-    struct
-    {
-        int cmpNames (const void* x, const void* y)
-        {
-            int i=0;
-            Student* a=(Student*)x;
-            Student* b=(Student*)y;
-            while (strlen(a->name)==strlen(b->name) && i<strlen(a->name) && a->name[i]==b->name[i++]);
-            return a->name[i]-b->name[i];
-        };
-    } cmp;
-    qsort (studPointer_,sizeof(Student),count_,cmpNames);
+
+   for (int i=0;i<this->count_;i++)
+       for (int j=i;j<this->count_-1;j++)
+       {
+            if (cmpNames ((void*)(this->studPointer_+j),(void*)(this->studPointer_+j+1))>0)
+            {
+                Student tmp = studPointer_[j];
+                studPointer_[j]=studPointer_[j+1];
+                studPointer_[j+1]=tmp;
+            }
+       }
 }

@@ -1,7 +1,7 @@
 #ifndef ARRAYSTACK_H
 #define ARRAYSTACK_H
 
-template <class T> class ArrayStack
+template <class T=int> class ArrayStack
 {
     T* arr_;
     int size_;

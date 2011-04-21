@@ -19,10 +19,16 @@ SOURCES += main.cpp \
     List.cpp \
     ArrayStack.cpp \
     StructExceptions.cpp \
-    StudContainer.cpp
+    StudContainer.cpp \
+    ArrayQueue.cpp
 
 HEADERS += \
     List.h \
     ArrayStack.h \
     StructExceptions.h \
-    StudContainer.h
+    StudContainer.h \
+    ArrayQueue.h \
+    controller.h
+
+OTHER_FILES += \
+    students.txt

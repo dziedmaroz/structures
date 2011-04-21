@@ -13,7 +13,7 @@ class StudContainer
 	Student* studPointer_;
 	int count_;
 	int findByName (char* name);
-	//int cmpNames ( const void* a,const void* b);
+	int cmpNames ( const void* a,const void* b);
 public:
 	StudContainer (int n);
 	StudContainer (const StudContainer& orig);
@@ -24,7 +24,7 @@ public:
 	void sortByName ();
 	Student* getStud (char* name);
 	void report (char* fileName); //???
-	void print (ostream& stream);
+	void print (ostream& stream=cout);
 	int getSize ();
 	int getCount ();
 };
