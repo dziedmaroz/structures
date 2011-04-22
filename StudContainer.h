@@ -1,3 +1,5 @@
+#ifndef STUDCONTAINER_H
+#define STUDCONTAINER_H
 #include <iostream>
 
 using namespace std;
@@ -28,3 +30,5 @@ public:
 	int getSize ();
 	int getCount ();
 };
+
+#endif

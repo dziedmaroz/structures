@@ -1,7 +1,7 @@
 #include "ArrayStack.h"
-#include "ArrayStack.cpp"
 #include "List.h"
 #include "StudContainer.h"
+#include "controller.h"
 
 #include <stdio.h>
 
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 //    for (int i=0;i<10;i++)
 //        printf ("%d\n",lst.remove ());
 
-    StudContainer studs (5);
+   /* StudContainer studs (5);
     FILE* fin = fopen ("students.txt","r");
     while (!feof(fin))
     {
@@ -38,7 +38,8 @@ int main(int argc, char *argv[])
     studs.print ();
     studs.remove ("Anderson");
     printf ("\n");
-    studs.print ();
+    studs.print ();*/
+ 
 
 
     return 0;
