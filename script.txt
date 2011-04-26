@@ -1,0 +1,8 @@
+#STUDENTS
+
+TYPE stud
+MKNEW 10
+LOAD students.txt
+PRINT
+SORT
+PRINT

@@ -17,10 +17,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp \        
     List.cpp \
-    ArrayStack.cpp \
     StructExceptions.cpp \
     StudContainer.cpp \
-    ArrayQueue.cpp
+    ArrayQueue.cpp \
+    controller.cpp \
+    Deque.cpp
 
 HEADERS += \
     List.h \
@@ -28,7 +29,9 @@ HEADERS += \
     StructExceptions.h \
     StudContainer.h \
     ArrayQueue.h \
-    controller.h
+    controller.h \
+    Deque.h
 
 OTHER_FILES += \
-    students.txt
+    students.txt \
+    script.txt

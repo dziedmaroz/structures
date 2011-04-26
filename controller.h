@@ -30,6 +30,6 @@ struct Action
 
 
 void control (char* scriptfilename);
-void dealStudContainer (Action* actionList, int actSize); 
+void dealStudContainer (const Action* actionList, int actSize);
 
 #endif // CONTROLLER_H

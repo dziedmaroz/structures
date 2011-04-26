@@ -1,5 +1,9 @@
 #ifndef ARRAYSTACK_H
 #define ARRAYSTACK_H
+#include "StructExceptions.h"
+#include <iostream>
+
+using namespace std;
 
 template <class T> class ArrayStack
 {

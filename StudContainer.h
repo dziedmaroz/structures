@@ -21,11 +21,12 @@ public:
 	StudContainer (const StudContainer& orig);
 	~StudContainer ();
 
+	StudContainer&	operator= (StudContainer &orig);
+
 	bool insert (Student& item);
 	bool remove (char* name);
 	void sortByName ();
-	Student* getStud (char* name);
-	void report (char* fileName); //???
+	Student* getStud (char* name);	
 	void print (ostream& stream=cout);
 	int getSize ();
 	int getCount ();

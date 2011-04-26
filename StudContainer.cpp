@@ -13,12 +13,27 @@ StudContainer::StudContainer(const StudContainer &orig)
 {
 	size_= orig.size_;
 	count_=orig.count_;
+	delete []studPointer_;
 	studPointer_=new Student [size_];
 
 	for (int i=0;i<count_;i++)
 	{
 		studPointer_[i]=orig.studPointer_[i];
 	}
+}
+
+StudContainer& StudContainer::operator = (StudContainer& orig)
+{
+    size_= orig.size_;
+    count_=orig.count_;
+    delete []studPointer_;
+    studPointer_=new Student [size_];
+
+    for (int i=0;i<count_;i++)
+    {
+            studPointer_[i]=orig.studPointer_[i];
+    }
+    return *this;
 }
 
 StudContainer::~StudContainer ()

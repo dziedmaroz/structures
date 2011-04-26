@@ -2,6 +2,7 @@
 #include "List.h"
 #include "StudContainer.h"
 #include "controller.h"
+#include "Deque.h"
 
 #include <stdio.h>
 
@@ -39,7 +40,8 @@ int main(int argc, char *argv[])
     studs.remove ("Anderson");
     printf ("\n");
     studs.print ();*/
- 
+
+
 
 
     return 0;
