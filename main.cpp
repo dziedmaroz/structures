@@ -41,6 +41,19 @@ int main(int argc, char *argv[])
     printf ("\n");
     studs.print ();*/
 
+    Deque deque;
+    deque.print ();
+    deque.insertHead (1);
+    deque.print ();
+    deque.insertHead (2);
+    deque.print ();
+    deque.insertTail (3);
+    deque.print ();
+    deque.removeHead ();
+    deque.print ();
+    deque.insertHead (4);
+    deque.print ();
+
 
 
 

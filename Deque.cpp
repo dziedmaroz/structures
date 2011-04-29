@@ -1,6 +1,6 @@
 #include "Deque.h"
 #include "StructExceptions.h"
-
+#include <stdio.h>
 Deque::Deque()
 {
     head_=NULL;
@@ -43,8 +43,27 @@ Deque::Deque (int val)
    tail_=head_;
 }
 
-Deque::insertHead (int item)
+void Deque::insertHead (int item)
 {
+    if (head_==tail_ && head_==NULL)
+    {
+        head_ = new Node;
+        head_->item_=item;
+        head_->next_=NULL;
+        head_->prev_=NULL;
+        tail_=head_;
+        return;
+    }
+    if (head_==tail_ && head_!=NULL)
+    {
+        head_= new Node;
+        head_->item_= item;
+        head_->prev_=NULL;
+        head_->next_=tail_;
+        tail_->prev_=head_;
+        return;
+    }
+
     Node* tmp = new Node;
     tmp->item_=item;
     tmp->next_=head_;
@@ -52,12 +71,31 @@ Deque::insertHead (int item)
     head_=tmp;
 }
 
-Deque::insertTail (int item)
+void Deque::insertTail (int item)
 {
+    if (head_==tail_ && head_==NULL)
+    {
+        tail_ = new Node;
+        tail_->item_=item;
+        tail_->next_=NULL;
+        tail_->prev_=NULL;
+        head_=tail_;
+        return;
+    }
+    if (head_==tail_ && head_!=NULL)
+    {
+        tail_= new Node;
+        tail_->item_= item;
+        tail_->prev_=head_;
+        tail_->next_=NULL;
+        head_->next_=tail_;
+        return;
+    }
+
     Node* tmp = new Node;
     tmp->item_=item;
-    tmp->prev_=tail_;
     tmp->next_=NULL;
+    tmp->prev_=tail_;
     tail_=tmp;
 }
 
@@ -89,3 +127,22 @@ bool Deque::isEmpty ()
     return (head_==tail_ && head_==NULL);
 }
 
+void Deque::print ()
+{
+    Node* tmpPtr = head_;
+    printf ("H| ");
+    while (tmpPtr!=NULL)
+    {
+        printf (" %3d ",tmpPtr->item_);
+        tmpPtr=tmpPtr->next_;
+    }
+    printf ("|T\n");
+}
+
+Deque::~Deque ()
+{
+    while (!isEmpty ())
+    {
+        removeHead ();
+    }
+}

@@ -20,13 +20,15 @@ public:
 
     ~Deque ();
 
-    bool insertHead (int item);
-    bool insertTail (int item);
+    void insertHead (int item);
+    void insertTail (int item);
 
     int removeHead ();
     int removeTail ();
 
     bool isEmpty ();
+
+    void print ();
 };
 
 #endif // DEQUE_H
